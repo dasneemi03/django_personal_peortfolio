@@ -1,0 +1,26 @@
+
+{% extends 'portfolio/main_base.html' %}
+{% block content %}
+
+{% load static %}
+{% static "images" as baseUrl %}
+
+<div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Projects</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+   {% for project in projects %}
+
+<!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <a href="#">
+        	<img class="center" src="{% static 'portfolio/Potrait.JPG' %}" style="width:100%">{{ project.title }}</a>
+        <p>{{ project.description }}</p>
+      </div>
+      <!-- End photo grid -->
+  </div>
+    <!-- End Portfolio Section -->
+    </div>
+{% endfor %}
+{% endblock %}

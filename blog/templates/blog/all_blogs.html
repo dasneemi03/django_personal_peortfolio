@@ -1,0 +1,21 @@
+
+{% extends 'portfolio/main_base.html' %}
+{% block title %}
+
+<div class="w3-padding-64 w3-content" id="photos">
+<h2 class="w3-text-light-grey">Neemisa has written {{ blogs.count}} blog{{blogs.count|pluralize}}</h2>
+<hr style="width:200px" class="w3-opacity">
+<br>
+
+{% for blog in blogs %}
+<div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+<a href="{% url 'blog:detail' blog.id %}"><h2 class="w3-text-light-grey">{{ blog.title }}</h2></a>
+
+<h5 class="w3-text-light-grey">{{ blog.date | date:'M d, Y '| upper}}</h5>
+<p>{{ blog.description| striptags|truncatechars:100}} </p>
+  <!-- End About Section -->
+  </div>
+
+{% endfor %}
+{% endblock %}
