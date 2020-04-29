@@ -1,2 +1,2 @@
-# django_personal_peortfolio
+# django_personal_portfolio
 A portfolio for demo.
